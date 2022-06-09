@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ESTILOS HEADER Y MENU DE NAVEGACION */
+.header {
+    height: 85px;
+    background-color: rgb(237, 228, 236);
+    padding: 5px 10%; 
+}
+
+.nav{
+    padding-top: 15px;  
+    display: flex;
+    justify-content: space-between;  
+}
+
+.nav__logo:hover {
+    transform: scale(1.1);
+}
+
+.nav__ul {
+    list-style-type: none;
+}
+
+.nav__li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav__li:hover {
+    transform: scale(1.1);
+}
+
+.nav__link {
+    text-decoration: none;
+    font-size: 25px;
+    color: rgb(55, 84, 110);
+}
+
+.nav__link:hover {
+    color:black;
+}
+
+/* ESTILOS PAGINAS */
+
+/* Products */
+.title__products {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    margin-top: 20px;
+    color: rgb(55, 84, 110);
+}
+
+/* Pagina carrito */
+.title__carrito {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    font-size: 100px;
+    color: rgb(55, 84, 110);
+}
+
+.container-cart {
+    display: flex;
+    justify-content: center;
+}
+
+/* Home */
+.home__title {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.home__span__welcome {
+    color: rgb(55, 84, 110);
+    font-size: 70px;
+}
+
+.home__span__name {
+    color: rgb(55, 84, 110);
+    font-size: 70px;
+    margin-left: 13px;
+}
+
+/* ESTILOS DE LAS CARD */
+.item-container-card{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.item-card {
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+
+}
+
+.item-card:hover{
+    transform: scale(1.1);
+}
+
+/* ESTILO DEL ITEM COUNT */
+
+.counter {
+    width: fit-content;
+    background-color: rgb(12, 124, 222);
+    border-radius: 5px;
+    margin: auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.counter button {
+    padding: 6px;
+    background-color: rgb(12, 124, 222);
+    color: aliceblue;
+    border: 1px solid rgb(235, 233, 239);
+    margin: 2px;
+}
+
+.counter span {
+    color: aliceblue;
+}
+
+.span-cart {
+    height: 20px;
+    width: 20px;
+    background-color: rgb(55, 84, 110);
+    color: aliceblue;
+    padding: 4px;
+    margin-left: 2px;
+    border-radius: 10px;
+}
+
