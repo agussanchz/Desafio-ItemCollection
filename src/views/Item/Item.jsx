@@ -12,7 +12,7 @@ export default function Item() {
   return (
     //Le paso por props a mi componente ItemDetailContainer los id obtenidos
     <div>
-        <ItemDetailContainer itemId={+itemId}/>      
+        <ItemDetailContainer itemId={itemId}/>      
     </div>
 
   )

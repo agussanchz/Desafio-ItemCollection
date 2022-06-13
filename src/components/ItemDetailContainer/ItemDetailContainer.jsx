@@ -1,8 +1,8 @@
 //Importaciones
 import React from 'react'
-import { products } from "../../Data/productos";
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { Container, Row, Col } from 'react-bootstrap';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
 
 //Exportacion de mi funcion ItemDetailContainer, que se encarga de recibir por props
 // el id de un producto especifico. Luego, al item recibido lo pasa a traves de props al 
@@ -13,7 +13,14 @@ export default function ItemDetailContainer({itemId}) {
   //Creacion de un hook useEffect, para aplicar un metodo de arrays find y seleccionar el item que tenga
   //el mismo id que el valor recibido por props
   React.useEffect(() => {
-    setItem(products.find(item => item.id === itemId));
+    const db = getFirestore()
+
+    const productRef = doc(db,"productos", itemId);
+    getDoc(productRef).then((snapshot) => {
+      if(snapshot.exists()){
+        setItem({id: snapshot.id, ...snapshot.data()})
+      }
+    })
   }, [itemId]);
 
   return (
