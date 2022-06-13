@@ -39,27 +39,6 @@ export default function ItemListContainer({categoryId}) {
   },[categoryId])
 
 
-
-
-
-
-
-  //Aplicacion de useEffect para guardar los productos utilizando un filter y asi distinguir las categoryId
-  // React.useEffect(() => {
-  //   if(categoryId){
-  //     setTimeout(()=>{
-  //       setLoading(false)
-  //     },1000)
-  //     setItems(products.filter(item => item.category_id === +categoryId));
-  //   }
-  //   else{
-  //     setTimeout(()=>{
-  //       setLoading(false)
-  //     },1000)
-  //     setItems(products);
-  //   }
-  // },[categoryId, loading]) 
-
   return (
     //Le paso a traves de props, los productos obtenidos a mi componente ItemList
     <div className='item-container-list'>
