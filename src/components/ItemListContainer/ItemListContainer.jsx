@@ -11,25 +11,37 @@ export default function ItemListContainer({categoryId}) {
   const [items, setItems] = React.useState([]);
 
   //Hook para controlar el spinner loading
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = React.useState(true);
 
 
   React.useEffect(() =>{
+
     const db = getFirestore();
 
 
     if(categoryId){
       const q = query(collection(db,"productos"), where("category_id", "==", categoryId))
       getDocs(q).then(snapshot => {
+        
+        setTimeout(()=>{
+          setLoading(false)
+        },1000)
+
         if(snapshot.size === 0){
           console.log("no hay productos")
         }
+        
         setItems(snapshot.docs.map(doc => ({id: doc.id, ...doc.data()})))
       })
     }
     else{
       const productsRef = collection(db,"productos")
       getDocs(productsRef).then(snapshot => {
+
+        setTimeout(()=>{
+          setLoading(false)
+        },1000)
+
         if(snapshot.size === 0){
           console.log("no hay productos")
         }
@@ -42,9 +54,9 @@ export default function ItemListContainer({categoryId}) {
   return (
     //Le paso a traves de props, los productos obtenidos a mi componente ItemList
     <div className='item-container-list'>
-      <Container>
-        <Row>
-          <Col>
+      <Container className='container'>
+        <Row className='row'>
+          <Col className='col'>
               {loading ? (
                 <Loader/>
               ) 

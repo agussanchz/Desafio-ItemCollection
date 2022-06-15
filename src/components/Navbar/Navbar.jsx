@@ -16,7 +16,7 @@ export default function Navbar() {
         <ul className='nav__ul'>
           <li className='nav__li'> <Link className='nav__link'to={'/products'}>Productos</Link> </li>
           <li className='nav__li'> <Link className='nav__link'to={'/category/teclado'}>Teclados</Link> </li>
-          <li className='nav__li'> <Link className='nav__link'to={'/category/mouse'}>Mouses</Link> </li>     
+          <li className='nav__li'> <Link className='nav__link'to={'/category/mouse'}>Mouses</Link> </li> 
         </ul>
         <CartWidget/>
       </nav>

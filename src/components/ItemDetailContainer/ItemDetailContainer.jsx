@@ -16,6 +16,7 @@ export default function ItemDetailContainer({itemId}) {
     const db = getFirestore()
 
     const productRef = doc(db,"productos", itemId);
+    
     getDoc(productRef).then((snapshot) => {
       if(snapshot.exists()){
         setItem({id: snapshot.id, ...snapshot.data()})
